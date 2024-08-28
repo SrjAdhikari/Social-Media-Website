@@ -1,0 +1,99 @@
+/* Import Google Font - Poppins with various weights */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+
+/* CSS Variables - Defining color palette and common properties */
+:root {
+    --color-white: hsl(252, 30%, 100%);
+    --color-light: hsl(252, 30%, 95%);
+    --color-gray: hsl(252, 15%, 65%);
+    --color-primary: hsl(252, 75%, 60%);
+    --color-secondary: hsl(252, 100%, 90%);
+    --color-success: hsl(120, 95%, 65%);
+    --color-danger: hsl(0, 95%, 65%);
+    --color-dark: hsl(252, 30%, 17%);
+    --color-black: hsl(252, 30%, 10%);
+
+    --border-radius: 2rem;
+    --card-border-radius: 1rem;
+    --btn-padding: 0.6rem 2rem;
+    --search-padding: 0.6rem 1rem;
+    --card-padding: 1rem;
+}
+
+/* Global Styles - Resetting default styles and applying box-sizing */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    border: 0;
+    outline: 0;
+
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Body Styling - Setting font, color, and background */
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--color-dark);
+    background: var(--color-light);
+    overflow: hidden;
+}
+
+/* Container - Centering content and setting width */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Profile Photo - Circular profile image with overflow hidden */
+.profile-photo {
+    width: 2.7rem;
+    
+    /* Ensures the element maintains a 1:1 aspect ratio, making it a perfect square. 
+    The width and height will always be equal, regardless of the specified dimensions. */
+    aspect-ratio: 1/1;
+
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* Image Styling - Ensuring images fill their container */
+img {
+    display: block;
+    width: 100%;
+}
+
+/* Button Styling - Basic button styles with transition effect */
+.btn {
+    display: inline-block;
+    padding: var(--btn-padding);
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+/* Primary Button - Specific styling for primary buttons */
+.btn.btn-primary {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+/* Button Hover Effect - Slight opacity change on hover */
+.btn:hover {
+    opacity: 0.8;
+}
+
+.text-bold {
+    font-weight: 500;
+}
+
+.text-mutes {
+    color: var(--color-gray);
+}
