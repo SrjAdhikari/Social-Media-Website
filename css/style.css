@@ -50,10 +50,10 @@ body {
     margin: 0 auto;
 }
 
-/* Profile Photo - Circular profile image with overflow hidden */
-.profile-photo {
+/* profile-picture - Circular profile image with overflow hidden */
+.profile-picture {
     width: 2.7rem;
-    
+
     /* Ensures the element maintains a 1:1 aspect ratio, making it a perfect square. 
     The width and height will always be equal, regardless of the specified dimensions. */
     aspect-ratio: 1/1;
@@ -96,4 +96,52 @@ img {
 
 .text-mutes {
     color: var(--color-gray);
+}
+
+
+/*************************** NAVBAR ***************************/
+
+/* Navigation bar styling */
+nav {
+    width: 100%; /* Full width */
+    background: var(--color-white);         /* Background color */
+    padding: 0.7rem 0;                      /* Vertical padding */
+    position: fixed;                        /* Fixed position at the top */
+    top: 0;                                 /* Align to the top */
+    z-index: 10;                            /* Ensure it stays above other content */
+}
+
+/* Container inside the navigation for layout */
+nav .container {
+    display: flex;                          /* Flexbox layout */
+    align-items: center;                    /* Center items vertically */
+    justify-content: space-between;         /* Space between items */
+}
+
+/* Search bar styling */
+nav .search-bar {
+    background: var(--color-light);         /* Background color */
+    border-radius: var(--border-radius);    /* Rounded corners */
+    padding: var(--search-padding);         /* Padding inside the search bar */
+}
+
+/* Search input field styling */
+nav .search-bar input {
+    background: transparent;                /* Transparent background */
+    width: 30vw;                            /* Responsive width based on viewport width */
+    margin-left: 1rem;                      /* Spacing between icon and input */
+    font-size: 0.9rem;                      /* Font size */
+    color: var(--color-dark);               /* Text color */
+}
+
+/* Placeholder text color for input */
+nav .search-bar input::placeholder {
+    color: var(--color-gray);               /* Placeholder text color */
+}
+
+/* Styling for the create button and profile picture section */
+nav .create {
+    display: flex;                          /* Flexbox layout */
+    align-items: center;                    /* Center items vertically */
+    gap: 2rem;                              /* Spacing between items */
 }
