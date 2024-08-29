@@ -19,6 +19,9 @@
     --btn-padding: 0.6rem 2rem;
     --search-padding: 0.6rem 1rem;
     --card-padding: 1rem;
+
+    --sticky-top-left: 5.4rem
+    --sticky-top-right: -18rem
 }
 
 /* Global Styles - Resetting default styles and applying box-sizing */
@@ -144,4 +147,177 @@ nav .create {
     display: flex;                          /* Flexbox layout */
     align-items: center;                    /* Center items vertically */
     gap: 2rem;                              /* Spacing between items */
+}
+
+
+/*************************** MAIN ***************************/
+
+/* Main section of the page */
+main {
+    position: relative;                     /* Positions the main element relative to its normal position */
+    top: 5.4rem;                            /* Moves the main element down by 5.4rem */
+}
+
+/* Container within the main section */
+main .container {
+    display: grid;                          /* Uses a grid layout for the container */
+    grid-template-columns: 18vw auto 20vw;  /* Defines three columns with widths of 18vw, auto (remaining space), and 20vw respectively */
+    column-gap: 2rem;                       /* Sets a 2rem gap between the grid columns */
+    position: relative;                     /* Positions the container element relative to its normal position */
+}
+
+
+/*************************** LEFT ***************************/
+
+/* Left section within the container */
+main .container .left {
+    height: max-content;                    /* Sets the height to fit the content */
+    position: sticky;                       /* Makes the element stick in its position when scrolled */
+    top: var(--sticky-top-left);            /* Sets the top position for the sticky element using a CSS variable */
+}
+
+/* Profile section within the left section */
+main .container .left .profile {
+    padding: var(--card-padding);               /* Adds padding inside the profile card using a CSS variable */
+    background: var(--color-white);             /* Sets the background color of the profile card to white using a CSS variable */
+    border-radius: var(--card-border-radius);   /* Rounds the corners of the profile card using a CSS variable */
+    display: flex;                              /* Uses a flexbox layout for the profile card */
+    align-items: center;                        /* Aligns the items in the center vertically within the flex container */
+    column-gap: 1rem;                           /* Sets a 1rem gap between the flex items (columns) */
+    width: 100%;                                /* Ensures the profile card takes up the full width of its container */
+}
+
+
+/*************************** SIDEBAR ***************************/
+
+/* Sidebar section within the left section */
+.left .sidebar {
+    margin-top: 1rem;                           /* Adds a margin to the top of the sidebar */
+    background: var(--color-white);             /* Sets the background color of the sidebar to white using a CSS variable */
+    border-radius: var(--card-border-radius);   /* Rounds the corners of the sidebar using a CSS variable */
+}
+
+/* Individual menu items in the sidebar */
+.left .sidebar .menu-item {
+    display: flex;                              /* Uses a flexbox layout for the menu item */
+    align-items: center;                        /* Vertically centers the items within the menu item */
+    height: 4rem;                               /* Sets the height of each menu item to 4rem */
+    cursor: pointer;                            /* Changes the cursor to a pointer when hovering over the menu item */
+    transition: all 300ms ease;                 /* Applies a transition effect to all properties over 300ms with ease timing */
+    position: relative;                         /* Positions the menu item relative to its normal position */
+}
+
+/* Hover effect for menu items */
+.left .sidebar .menu-item:hover {
+    background: var(--color-light);             /* Changes the background color on hover using a CSS variable */
+}
+
+/* Icons within the sidebar menu items */
+.left .sidebar i {
+    font-size: 1.4rem;                          /* Sets the font size of the icons */
+    /* color: var(--color-gray); */             /* (Commented out) Sets the icon color using a CSS variable */
+    margin-left: 2rem;                          /* Adds a left margin to the icons */
+    position: relative;                         /* Positions the icon relative to its normal position */
+}
+
+/* Notification count indicator on icons */
+.left .sidebar i .notification-count {
+    background: var(--color-danger);            /* Sets the background color of the notification count using a CSS variable */
+    color: #fff;                              /* Sets the text color to white */
+    font-size: 0.7rem;                          /* Sets the font size of the notification count */
+    width: fit-content;                         /* Sets the width to fit the content */
+    border-radius: 0.8rem;                      /* Rounds the corners of the notification count */
+    padding: 0.15rem 0.4rem;                    /* Adds padding inside the notification count */
+    position: absolute;                         /* Positions the notification count absolutely within the icon */
+    top: -0.3rem;                               /* Positions the notification count slightly above the icon */
+    right: -0.6rem;                             /* Positions the notification count slightly to the right of the icon */
+}
+
+/* Heading text within the sidebar menu items */
+.left .sidebar h3 {
+    margin-left: 1.5rem;                        /* Adds a left margin to the heading */
+    font-size: 1rem;                            /* Sets the font size of the heading */
+}
+
+/* Active menu item styling */
+.left .sidebar .active {
+    background: var(--color-light);             /* Changes the background color of the active menu item using a CSS variable */
+}
+
+/* Active menu item icon and heading styling */
+.left .sidebar .active i, 
+.left .sidebar .active h3 {
+    color: var(--color-primary);                /* Changes the color of the icon and heading in the active menu item using a CSS variable */
+}
+
+/* Indicator for the active menu item */
+.left .sidebar .active::before {
+    content: "";                                /* Inserts an empty content block before the active menu item */
+    display: block;                             /* Displays the block */
+    width: 0.5rem;                              /* Sets the width of the indicator */
+    height: 100%;                               /* Sets the height to 100% of the menu item */
+    position: absolute;                         /* Positions the indicator absolutely within the menu item */
+    background: var(--color-primary);           /* Sets the background color of the indicator using a CSS variable */
+}
+
+/* Rounded corners for the first active menu item */
+.left .sidebar .menu-item:first-child.active {
+    border-top-left-radius: var(--card-border-radius);      /* Rounds the top-left corner of the first active menu item */
+    overflow: hidden;                                       /* Hides any overflow content */
+}
+
+/* Rounded corners for the last active menu item */
+.left .sidebar .menu-item:last-child.active {
+    border-bottom-left-radius: var(--card-border-radius);   /* Rounds the bottom-left corner of the last active menu item */
+    overflow: hidden;                                       /* Hides any overflow content */
+}
+
+/* Button styling within the left section */
+.left .btn {
+    margin-top: 1rem;                                       /* Adds a margin to the top of the button */
+    width: 100%;                                            /* Sets the button to take up 100% of the container's width */
+    text-align: center;                                     /* Centers the button text */
+    padding: 1rem 0;                                        /* Adds padding to the top and bottom of the button */
+}
+
+
+/********************** NOTIFICATION POPUP **********************/
+
+/* Notifications popup within the left section */
+.left .notifications-popup {
+    position: absolute;                                     /* Absolutely positions the notifications popup relative to its container */
+    top: 0;                                                 /* Aligns the popup at the top of its container */
+    left: 110%;                                             /* Positions the popup slightly to the right outside its container */
+    width: 30rem;                                           /* Sets the width of the popup */
+    background: var(--color-white);                         /* Sets the background color to white using a CSS variable */
+    border-radius: var(--card-border-radius);               /* Rounds the corners of the popup using a CSS variable */
+    padding: var(--card-padding);                           /* Adds padding inside the popup using a CSS variable */
+    box-shadow: 0 0 2rem hsl(var(--color-primary), 75%, 60% 25%);   /* Adds a shadow effect around the popup */
+    z-index: 8;                                             /* Sets the stacking order above other elements */
+    display: none;                                          /* Hides the popup by default */
+}
+
+/* Arrow indicator for the notifications popup */
+.left .notifications-popup::before {
+    content: "";                                            /* Inserts an empty content block to create the arrow */
+    width: 2rem;                                            /* Sets the width of the arrow */
+    height: 2rem;                                           /* Sets the height of the arrow */
+    display: block;                                         /* Ensures the arrow is displayed as a block element */
+    background: var(--color-white);                         /* Matches the background color to the popup */
+    position: absolute;                                     /* Absolutely positions the arrow */
+    left: -0.65rem;                                         /* Positions the arrow slightly to the left of the popup */
+    transform: rotate(45deg);                               /* Rotates the arrow to create a diamond shape */
+}
+
+/* Layout for individual notification items */
+.left .notifications-popup > div {
+    display: flex;                                          /* Uses a flexbox layout for the notification items */
+    align-items: start;                                     /* Aligns items at the start of the cross-axis (top) */
+    gap: 1rem;                                              /* Adds a 1rem gap between flex items */
+    margin-bottom: 1rem;                                    /* Adds a bottom margin to space out the notifications */
+}
+
+/* Small text within the notifications popup */
+.left .notifications-popup small {
+    display: block;                                         /* Ensures small text elements take up the full width of their container */
 }
