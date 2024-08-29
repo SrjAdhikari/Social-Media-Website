@@ -422,3 +422,69 @@ main .container .left .profile {
     color: var(--color-dark);                               /* Sets the text color inside the input field */
     margin-right: 1rem;                                     /* Adds a right margin to separate the input field from the submit button */
 }
+
+
+/*************************** NEWS FEEDS ***************************/
+/* Styling for individual feed cards */
+.middle .feeds .feed {
+    background: var(--color-white);                         /* Background color for feed card */
+    border-radius: var(--card-border-radius);               /* Rounded corners */
+    padding: var(--card-padding);                           /* Padding inside the card */
+    margin: 1rem 0;                                         /* Vertical spacing between feed cards */
+    font-size: 0.85rem;                                     /* Font size for text inside the feed */
+    line-height: 1.5;                                       /* Line height for better readability */
+}
+
+/* Header section inside each feed */
+.middle .feed .head {
+    display: flex;                                          /* Aligns child elements horizontally */
+    justify-content: space-between;                         /* Space between user info and edit button */
+}
+
+/* User profile and information layout */
+.middle .feed .user {
+    display: flex;                                          /* Aligns profile picture and info horizontally */
+    gap: 1rem;                                              /* Space between profile picture and user info */
+}
+
+/* Photo section in each feed */
+.middle .feed .photo {
+    border-radius: var(--card-border-radius);               /* Rounded corners for photos */
+    overflow: hidden;                                       /* Hides overflow for rounded images */
+    margin: 0.7rem 0;                                       /* Vertical spacing around the photo */
+}
+
+/* Action buttons (like, comment, share, bookmark) */
+.middle .feed .action-buttons {
+    display: flex;                                          /* Aligns buttons horizontally */
+    justify-content: space-between;                         /* Space between buttons and bookmark */
+    align-items: center;                                    /* Center buttons vertically */
+    font-size: 1.4rem;                                      /* Font size for icons */
+    margin: 0.6rem;                                         /* Margin around action buttons */
+}
+
+/* Layout for the "liked by" section */
+.middle .liked-by {
+    display: flex;                                          /* Aligns liked user icons horizontally */
+}
+
+/* Individual liked user icons */
+.middle .liked-by span {
+    width: 1.4rem;                                          /* Width of user icon */
+    height: 1.4rem;                                         /* Height of user icon */
+    display: block;                                         /* Makes the span a block element */
+    border-radius: 50%;                                     /* Makes the span a circle */
+    overflow: hidden;                                       /* Hides overflow for circular images */
+    border: 2px solid var(--color-white);                   /* Border around user icons */
+    margin-left: -0.6rem;                                   /* Negative margin for overlapping icons */
+}
+
+/* First liked user icon should have no left margin */
+.middle .liked-by span:first-child {
+    margin: 0;                                              /* No margin for the first icon */
+}
+
+/* Styling for the liked by text */
+.middle .liked-by p {
+    margin-left: 0.5rem;                                    /* Space between the last user icon and text */
+}
