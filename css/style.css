@@ -20,8 +20,8 @@
     --search-padding: 0.6rem 1rem;
     --card-padding: 1rem;
 
-    --sticky-top-left: 5.4rem
-    --sticky-top-right: -18rem
+    --sticky-top-left: 5.4rem;
+    --sticky-top-right: -18rem;
 }
 
 /* Global Styles - Resetting default styles and applying box-sizing */
@@ -488,3 +488,158 @@ main .container .left .profile {
 .middle .liked-by p {
     margin-left: 0.5rem;                                    /* Space between the last user icon and text */
 }
+
+
+/*************************** RIGHT ***************************/
+/* ------------- MESSAGES ------------- */
+
+/* Container for messages section with sticky positioning */
+main .container .right {
+    height: max-content;
+    position: sticky;
+    top: var(--sticky-top-right);
+    bottom: 0;
+}
+
+/* Styling for the messages section background, border, and padding */
+.right .messages {
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+}
+
+/* Header styling in messages section with flex alignment */
+.right .messages .heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+/* Font size and line height adjustments for icons in messages header */
+.right .messages i {
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+/* Search bar styling including flex display and padding */
+.right .messages .search-bar {
+    display: flex;
+    margin-bottom: 1rem;
+    background: var(--color-light);
+    border-radius: var(--border-radius);
+    padding: var(--search-padding);
+}
+
+/* Styling for search input field */
+.right .messages .search-bar input {
+    background: transparent;
+    width: 30vw;
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    color: var(--color-dark);
+}
+
+/* Flex layout for categories in messages section */
+.right .messages .category {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+/* Category header styling with border and padding */
+.right .messages .category h6 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 4px solid var(--color-light);
+    padding-bottom: 0.5rem;
+    font-size: 0.85rem;
+}
+
+/* Active category styling with darker border color */
+.right .messages .category .active {
+    border-color: var(--color-dark);
+}
+
+/* Styling for message request text color */
+.right .messages .message-request {
+    color: var(--color-primary);
+}
+
+/* Flex layout for individual message items */
+.right .messages .message {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: start;
+}
+
+/* Profile picture styling within message items */
+.right .message .profile-picture {
+    position: relative;
+    overflow: visible;
+}
+
+/* Profile picture image styling */
+.right .profile-picture img {
+    border-radius: 50%;
+}
+
+/* Remove margin for the last message item */
+.right .messages .message:last-child {
+    margin: 0;
+}
+
+/* Font size adjustment for message text */
+.right .messages .message p {
+    font-size: 0.8rem;
+}
+
+/* Active status indicator styling within profile picture */
+.right .messages .message .profile-picture .active {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    border: 3px solid var(--color-white);
+    background: var(--color-success);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+/* ------------- END OF MESSAGES ------------- */
+
+
+/* ------------- FRIEND REQUEST ------------- */
+
+/* Styling for friend request section with margin top */
+.right .friend-request {
+    margin-top: 1rem;
+}
+
+/* Header styling for friend request section */
+.right .friend-request h4 {
+    color: var(--color-gray);
+    margin: 1rem 0;
+}
+
+/* Styling for individual friend request items */
+.right .request {
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-bottom: 0.7rem;
+}
+
+/* Flex layout for request info section */
+.right .request .info {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Flex layout for action buttons in request items */
+.right .request .action {
+    display: flex;
+    gap: 1rem;
+}
+/* ------------- END OF FRIEND REQUEST ------------- */
