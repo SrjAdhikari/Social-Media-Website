@@ -643,3 +643,177 @@ main .container .right {
     gap: 1rem;
 }
 /* ------------- END OF FRIEND REQUEST ------------- */
+
+
+/********************** THEME CUSTOMIZATION **********************/
+/* Main container for theme customization overlay */
+.customize-theme {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    font-size: 0.9rem;
+}
+
+/* Styling for the theme customization card */
+.customize-theme .card {
+    background: var(--color-white);
+    padding: 3rem;
+    border-radius: var(--card-border-radius);
+    width: 50%;
+}
+
+/* ------------- FONT SIZE ------------- */
+/* Section for font size customization */
+.customize-theme .font-size {
+    margin-top: 5rem;
+}
+
+/* Container for the font size options */
+.customize-theme .font-size > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-light);
+    padding: var(--search-padding);
+    border-radius: var(--card-border-radius);
+}
+
+/* Bar for choosing font size */
+.customize-theme .choose-size {
+    background: var(--color-secondary);
+    height: 0.3rem;
+    width: 100%;
+    margin: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Circle markers for selecting font size */
+.customize-theme .choose-size span {
+    width: 1rem;
+    height: 1rem;
+    background: var(--color-secondary);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Active state for selected font size marker */
+.customize-theme .choose-size span.active {
+    background: var(--color-primary);
+}
+/* ------------- END OF FONT SIZE ------------- */
+
+/* ------------------ COLORS ------------------- */
+/* Section for color customization */
+.customize-theme .color {
+    margin-top: 2rem;
+}
+
+/* Container for the color options */
+.customize-theme .choose-color {
+    background: var(--color-light);
+    padding: var(--search-padding);
+    border-radius: var(--card-border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Circle markers for selecting colors */
+.customize-theme .choose-color span {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+}
+
+/* Specific color options */
+.customize-theme .choose-color span:nth-child(1) {
+    background: hsl(252, 75%, 60%);
+}
+
+.customize-theme .choose-color span:nth-child(2) {
+    background: hsl(52, 75%, 60%);
+}
+
+.customize-theme .choose-color span:nth-child(3) {
+    background: hsl(352, 75%, 60%);
+}
+
+.customize-theme .choose-color span:nth-child(4) {
+    background: hsl(152, 75%, 60%);
+}
+
+.customize-theme .choose-color span:nth-child(5) {
+    background: hsl(202, 75%, 60%);
+}
+
+/* Active state for selected color marker */
+.customize-theme .choose-color span.active {
+    border: 5px solid white;
+}
+/* ------------------ END OF COLORS ------------- */
+
+/* ------------------ BACKGROUND ---------------- */
+/* Section for background customization */
+.customize-theme .background {
+    margin-top: 2rem;
+}
+
+/* Container for background options */
+.customize-theme .choose-bg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Individual background option containers */
+.customize-theme .choose-bg > div {
+    padding: var(--card-padding);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+
+/* Active state for selected background */
+.customize-theme .choose-bg > div.active {
+    border: 2px solid var(--color-primary);
+}
+
+/* Specific background options */
+.customize-theme .choose-bg .bg-1 {
+    color: #000;
+    background: #fff;
+}
+
+.customize-theme .choose-bg .bg-2 {
+    color: #fff;
+    background: hsl(252, 30%, 17%);
+}
+
+.customize-theme .choose-bg .bg-3 {
+    color: #fff;
+    background: hsl(252, 30%, 10%);
+}
+
+/* Circle markers for background options */
+.customize-theme .choose-bg > div span {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid var(--color-gray);
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+/* --------------- END OF BACKGROUND -------------*/
