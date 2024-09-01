@@ -2,6 +2,13 @@
 // Select all elements with the class "menu-item" and store them in a NodeList
 const menuItems = document.querySelectorAll(".menu-item");
 
+//* MESSAGES
+// Select the element for messages notifications by ID
+const msgNotification = document.querySelector("#messages-notifications");
+
+// Select the element for messages by class name
+const message = document.querySelector(".messages");
+
 //*************** SIDEBAR *******************
 
 // Function to remove the 'active' class from all sidebar menu items
@@ -35,4 +42,20 @@ menuItems.forEach((item) => {
 			notificationCount.style.display = "none"; // Hide the notification count
 		}
 	});
+});
+
+//*************** MESSAGES *******************
+
+// Add a click event listener to the messages notifications element
+msgNotification.addEventListener("click", () => {
+	// Apply a box shadow to the messages element to highlight it when we clicked the "Message" menu
+	message.style.boxShadow = "0 0 1rem var(--color-primary)";
+
+	// Hide the notification count inside the messages notification element
+	msgNotification.querySelector(".notification-count").style.display = "none";
+
+	// Remove the box shadow from the messages container after 2 seconds
+	setTimeout(() => {
+		message.style.boxShadow = "none";
+	}, 2000);
 });
