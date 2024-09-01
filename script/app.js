@@ -29,6 +29,10 @@ const fontSizes = document.querySelectorAll(".choose-size span");
 // Select the root element for modifying CSS variables
 let root = document.querySelector(":root");
 
+//* PRIMARY COLOR
+// Select all span elements within the color palette
+const colorPalette = document.querySelectorAll(".choose-color span");
+
 //*************** SIDEBAR *******************
 
 // Function to remove the 'active' class from all sidebar menu items
@@ -181,5 +185,44 @@ fontSizes.forEach((size) => {
 
 		// Change the font size of the root html element based on the selected font size
 		document.querySelector("html").style.fontSize = fontSize;
+	});
+});
+
+//******************* PRIMARY COLOR ********************
+
+// Function to remove the "active" class from all color pickers
+const removeActiveColorClass = () => {
+	colorPalette.forEach((colorPicker) => {
+		colorPicker.classList.remove("active");
+	});
+};
+
+// Add click event listener to each color picker in the palette
+colorPalette.forEach((color) => {
+	color.addEventListener("click", () => {
+		// Variable to hold the selected primary color hue
+		let primaryHue;
+
+		// Remove "active" class from all color pickers
+		removeActiveColorClass();
+
+		// Determine the primary hue based on the clicked color picker
+		if (color.classList.contains("color-1")) {
+			primaryHue = 252; // Set hue for color-1
+		} else if (color.classList.contains("color-2")) {
+			primaryHue = 52; // Set hue for color-2
+		} else if (color.classList.contains("color-3")) {
+			primaryHue = 352; // Set hue for color-3
+		} else if (color.classList.contains("color-4")) {
+			primaryHue = 152; // Set hue for color-4
+		} else if (color.classList.contains("color-5")) {
+			primaryHue = 202; // Set hue for color-5
+		}
+
+		// Add "active" class to the selected color picker
+		color.classList.add("active");
+
+		// Update the primary color hue in the CSS variables
+		root.style.setProperty("--primary-color-hue", primaryHue);
 	});
 });
