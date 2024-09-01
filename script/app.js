@@ -9,6 +9,12 @@ const msgNotification = document.querySelector("#messages-notifications");
 // Select the element for messages by class name
 const message = document.querySelector(".messages");
 
+// Select individual messages within the messages container
+const individualMsg = message.querySelectorAll(".message");
+
+// Select the search input field by ID
+const messageSearch = document.querySelector("#message-search");
+
 //*************** SIDEBAR *******************
 
 // Function to remove the 'active' class from all sidebar menu items
@@ -45,6 +51,40 @@ menuItems.forEach((item) => {
 });
 
 //*************** MESSAGES *******************
+
+// Search Chat
+const searchMessage = () => {
+	// Get the current value from the search input field and convert it to lowercase
+	const value = messageSearch.value.toLowerCase();
+
+	// Iterate over each individual message element within the messages container
+	individualMsg.forEach((user) => {
+		// Select the h5 element within the current message element
+		const userName = user.querySelector("h5");
+
+		// Check if the h5 element exists
+		// If it exists, get its text content and convert it to lowercase for comparison
+		// If it does not exist, set searchName to an empty string
+		const searchName = userName ? userName.textContent.toLowerCase() : "";
+
+		// Check if the search query value is present within the name text content
+		// The indexOf method returns -1 if the value is not found
+		if (searchName.indexOf(value) !== -1) {
+			// If the search query matches the name, display the message element
+			user.style.display = "flex";
+		} else {
+			// If the search query does not match the name, hide the message element
+			user.style.display = "none";
+		}
+	});
+};
+
+// Add an event listener to the search input field
+// This event listener triggers the searchMessage function whenever the user types into the search field
+messageSearch.addEventListener("input", searchMessage);
+
+// Add an event listener to trigger searchMessage when the user types in the search field
+messageSearch.addEventListener("input", searchMessage);
 
 // Add a click event listener to the messages notifications element
 msgNotification.addEventListener("click", () => {
