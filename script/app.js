@@ -15,6 +15,13 @@ const individualMsg = message.querySelectorAll(".message");
 // Select the search input field by ID
 const messageSearch = document.querySelector("#message-search");
 
+//* THEME
+// Select the trigger element by its ID
+const theme = document.querySelector("#theme");
+
+// Select the modal element by its class name
+const themeModal = document.querySelector(".customize-theme");
+
 //*************** SIDEBAR *******************
 
 // Function to remove the 'active' class from all sidebar menu items
@@ -99,3 +106,24 @@ msgNotification.addEventListener("click", () => {
 		message.style.boxShadow = "none";
 	}, 2000);
 });
+
+//*************** THEME CUSTOMIZATION ***************
+
+// Function to open the modal
+const openThemeModal = () => {
+	themeModal.style.display = "grid"; // Set display style to "grid" to show the modal
+};
+
+// Function to close the modal
+const closeThemeModal = (evt) => {
+	// Check if the click event target is the backdrop (i.e., the overlay)
+	if (evt.target === themeModal) {
+		themeModal.style.display = "none"; // Set display style to "none" to hide the modal
+	}
+};
+
+// Add an event listener to the trigger element to open the modal when clicked
+theme.addEventListener("click", openThemeModal);
+
+// Add an event listener to the modal itself to close it when clicking outside of the content
+themeModal.addEventListener("click", closeThemeModal);
