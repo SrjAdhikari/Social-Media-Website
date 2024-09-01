@@ -22,6 +22,13 @@ const theme = document.querySelector("#theme");
 // Select the modal element by its class name
 const themeModal = document.querySelector(".customize-theme");
 
+//* FONT
+// Select all span elements within the font size chooser
+const fontSizes = document.querySelectorAll(".choose-size span");
+
+// Select the root element for modifying CSS variables
+let root = document.querySelector(":root");
+
 //*************** SIDEBAR *******************
 
 // Function to remove the 'active' class from all sidebar menu items
@@ -127,3 +134,52 @@ theme.addEventListener("click", openThemeModal);
 
 // Add an event listener to the modal itself to close it when clicking outside of the content
 themeModal.addEventListener("click", closeThemeModal);
+
+//******************* FONT SIZE ********************
+
+// Function to remove the "active" class from all font size selectors
+const removeSizeSelector = () => {
+	fontSizes.forEach((size) => {
+		size.classList.remove("active"); // Remove "active" class from each font size selector
+	});
+};
+
+// Add a click event listener to each font size selector
+fontSizes.forEach((size) => {
+	size.addEventListener("click", () => {
+		// Remove the "active" class from all selectors
+		removeSizeSelector();
+
+		// Variable to store the selected font size value
+		let fontSize;
+
+		// Toggle the "active" class on the clicked font size selector
+		size.classList.toggle("active");
+
+		// Check the class of the clicked selector and set the font size and CSS variables accordingly
+		if (size.classList.contains("font-size-1")) {
+			fontSize = "10px";
+			root.style.setProperty("--sticky-top-left", "5.4rem");
+			root.style.setProperty("--sticky-top-right", "5.4rem");
+		} else if (size.classList.contains("font-size-2")) {
+			fontSize = "13px";
+			root.style.setProperty("--sticky-top-left", "5.4rem");
+			root.style.setProperty("--sticky-top-right", "-7rem");
+		} else if (size.classList.contains("font-size-3")) {
+			fontSize = "16px";
+			root.style.setProperty("--sticky-top-left", "-2rem");
+			root.style.setProperty("--sticky-top-right", "-17rem");
+		} else if (size.classList.contains("font-size-4")) {
+			fontSize = "19px";
+			root.style.setProperty("--sticky-top-left", "-5rem");
+			root.style.setProperty("--sticky-top-right", "-25rem");
+		} else if (size.classList.contains("font-size-5")) {
+			fontSize = "22px";
+			root.style.setProperty("--sticky-top-left", "-12rem");
+			root.style.setProperty("--sticky-top-right", "-35rem");
+		}
+
+		// Change the font size of the root html element based on the selected font size
+		document.querySelector("html").style.fontSize = fontSize;
+	});
+});
