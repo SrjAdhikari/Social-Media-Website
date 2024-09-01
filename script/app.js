@@ -33,6 +33,12 @@ let root = document.querySelector(":root");
 // Select all span elements within the color palette
 const colorPalette = document.querySelectorAll(".choose-color span");
 
+//* BACKGROUND COLOR
+// Select elements for background color options
+const bg1 = document.querySelector(".bg-1");
+const bg2 = document.querySelector(".bg-2");
+const bg3 = document.querySelector(".bg-3");
+
 //*************** SIDEBAR *******************
 
 // Function to remove the 'active' class from all sidebar menu items
@@ -225,4 +231,66 @@ colorPalette.forEach((color) => {
 		// Update the primary color hue in the CSS variables
 		root.style.setProperty("--primary-color-hue", primaryHue);
 	});
+});
+
+//*************** BACKGROUND COLOR ****************
+// Variables to hold background color values
+let lightColorBackground;
+let whiteColorBackground;
+let darkColorBackground;
+
+// Function to apply the selected background colors to CSS variables
+const changeBackground = () => {
+	root.style.setProperty("--dark-color-background", darkColorBackground);
+	root.style.setProperty("--light-color-background", lightColorBackground);
+	root.style.setProperty("--white-color-background", whiteColorBackground);
+};
+
+// Event listener for the first background color option
+bg1.addEventListener("click", () => {
+	// Add "active" class to the selected background option
+	bg1.classList.add("active");
+
+	// Remove "active" class from other background options
+	bg2.classList.remove("active");
+	bg3.classList.remove("active");
+
+	// Reload the page to remove customized changes from local storage
+	window.location.reload();
+});
+
+// Event listener for the second background color option
+bg2.addEventListener("click", () => {
+	// Set background color values for the second option
+	darkColorBackground = "95%";
+	whiteColorBackground = "20%";
+	lightColorBackground = "15%";
+
+	// Add "active" class to the selected background option
+	bg2.classList.add("active");
+
+	// Remove "active" class from other background options
+	bg1.classList.remove("active");
+	bg3.classList.remove("active");
+
+	// Apply the new background color values
+	changeBackground();
+});
+
+// Event listener for the third background color option
+bg3.addEventListener("click", () => {
+	// Set background color values for the third option
+	darkColorBackground = "95%";
+	whiteColorBackground = "10%";
+	lightColorBackground = "0%";
+
+	// Add "active" class to the selected background option
+	bg3.classList.add("active");
+
+	// Remove "active" class from other background options
+	bg1.classList.remove("active");
+	bg2.classList.remove("active");
+
+	// Apply the new background color values
+	changeBackground();
 });
