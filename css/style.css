@@ -55,7 +55,7 @@ body {
     font-family: "Poppins", sans-serif;
     color: var(--color-dark);
     background: var(--color-light);
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 /* Container - Centering content and setting width */
@@ -431,7 +431,7 @@ main .container .left .profile {
     width: 100%;                                            /* Ensures the text input field takes up the full width of its container */
     background: transparent;                                /* Sets the background of the input field to transparent */
     color: var(--color-dark);                               /* Sets the text color inside the input field */
-    margin-right: 1rem;                                     /* Adds a right margin to separate the input field from the submit button */
+    margin-left: 1rem;                                     /* Adds a left margin to separate the input field from the profile picture */
 }
 
 
@@ -650,6 +650,7 @@ main .container .right {
 
 /* Flex layout for action buttons in request items */
 .right .request .action {
+    margin-top: 0.8rem;
     display: flex;
     gap: 1rem;
 }
@@ -831,6 +832,17 @@ main .container .right {
 }
 /* --------------- END OF BACKGROUND -------------*/
 
+.footer {
+    text-align: center;
+    padding: 10px 0 20px;
+    margin-top: 65px;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.made-with {
+    margin: 10px 0 5px 0;
+}
 
 /********* MEDIA QUERIES FOR LARGE DEVICES *******/
 @media screen and (max-width: 1200px) {
